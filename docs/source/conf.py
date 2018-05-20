@@ -14,6 +14,8 @@
 #
 # import os
 # import sys
+import sphinx_rtd_theme
+from mohand_plugin_expect.version import VERSION
 # sys.path.insert(0, os.path.abspath('.'))
 
 
@@ -24,9 +26,9 @@ copyright = '2018, littlemo'
 author = 'littlemo'
 
 # The short X.Y version
-version = ''
+version = '.'.join(map(str, VERSION[:2]))
 # The full version, including alpha/beta/rc tags
-release = '0.0.0'
+release = '.'.join(map(str, VERSION[:3]))
 
 
 # -- General configuration ---------------------------------------------------
@@ -48,6 +50,17 @@ extensions = [
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
 ]
+
+# Autodoc
+autodoc_default_flags = [
+    'members',
+    'show-inheritance',
+]
+
+autodoc_member_order = 'bysource'
+
+# Include __init__ docstring in class level docs
+autoclass_content = 'class'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -82,7 +95,8 @@ pygments_style = 'sphinx'
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+html_theme = 'sphinx_rtd_theme'
+html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -109,7 +123,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'mohand-plugin-otpdoc'
+htmlhelp_basename = 'mohand-plugin-otp-doc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -189,7 +203,9 @@ epub_exclude_files = ['search.html']
 # -- Options for intersphinx extension ---------------------------------------
 
 # Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'https://docs.python.org/': None}
+intersphinx_mapping = {
+    'python': ('https://docs.python.org/3.5', None)
+}
 
 # -- Options for todo extension ----------------------------------------------
 
