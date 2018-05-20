@@ -95,7 +95,7 @@ class OTP(object):
         """
         dict_ = {'otp': self.now()}
         dict_.update(kwargs)
-        return fmt.format(**kwargs)
+        return fmt.format(**dict_)
 
     def __exit__(self, exception_type, exception_value, traceback):
         if exception_type is None:
