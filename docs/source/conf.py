@@ -15,7 +15,7 @@
 # import os
 # import sys
 import sphinx_rtd_theme
-from mohand_plugin_expect.version import VERSION
+from mohand_plugin_otp.version import VERSION
 # sys.path.insert(0, os.path.abspath('.'))
 
 
