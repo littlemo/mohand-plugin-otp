@@ -4,6 +4,8 @@ from __future__ import unicode_literals
 import sys
 import logging
 
+import pyotp
+
 from mohand.hands import hand
 
 if sys.version > '3':
@@ -58,3 +60,49 @@ def otp(*dargs, **dkwargs):
         return _wrapper
     return wrapper if not invoked else wrapper(func)
 
+
+class OTP(object):
+    """
+    pyotp实例化后的对象封装，支持一系列接口方法
+    """
+
+    def __init__(self, secret=None):
+        if not secret:
+            raise ValueError('secret 值错误，不可为空')
+        self.otp = pyotp.TOTP(secret)
+
+    def __enter__(self):
+        return self
+
+    def now(self):
+        """
+        获取当前密码
+
+        :return: OTP 密码
+        :rtype: str
+        """
+        return self.otp.now()
+
+    def format(self, fmt='{otp}', **kwargs):
+        """
+        格式化密码输出，用于应对 OTP 与指定字串进行拼接作为最终密码的场景。
+        额外提供的格式化参数需要通过 ``**kwargs`` 传入
+
+        :param str fmt: 格式化模板字串，将会调用其 str.format 方法
+        :return: 格式化后的 OTP 密码
+        :rtype: str
+        :raises KeyError: fmt字串中指定的关键字参数未传入造成的格式化失败
+        """
+        dict_ = {'otp': self.now()}
+        dict_.update(kwargs)
+        return fmt.format(**kwargs)
+
+    def __exit__(self, exception_type, exception_value, traceback):
+        if exception_type is None:
+            return False
+        elif exception_type is ValueError:
+            # 返回 False 将异常抛出
+            return False
+        else:
+            log.error('other error: {}\n{}'.format(exception_value, traceback))
+            return False
