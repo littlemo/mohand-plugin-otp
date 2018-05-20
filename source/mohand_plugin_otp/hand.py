@@ -24,7 +24,7 @@ def otp(*dargs, **dkwargs):
     """
     将被装饰函数封装为一个 :class:`click.core.Command` 类，成为 ``mohand`` 的子命令
 
-    该装饰器被作为一个包含定制其行为的含参数装饰器使用（如： ``@hand.otp(otp='xxoo')`` ）
+    该装饰器被作为一个包含定制其行为的含参数装饰器使用（如： ``@hand.otp(secret='xxoo')`` ）
 
     .. note::
 
@@ -34,7 +34,7 @@ def otp(*dargs, **dkwargs):
         故将其实现为兼容两种传参的装饰器
 
     :param int log_level: 当前子命令的日志输出等级，默认为： ``logging.INFO``
-    :param str otp: 用于构造基于时间的 OTP 的秘钥字串
+    :param str secret: 用于构造基于时间的 OTP 的秘钥字串
     :return: 被封装后的函数
     :rtype: function
     """
