@@ -19,6 +19,13 @@ mohand-plugin-otp
    module/hand
 
 
+.. toctree::
+   :maxdepth: 2
+   :caption: 开发进程
+
+   develop/release
+
+
 索引表
 ======
 
