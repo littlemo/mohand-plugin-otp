@@ -13,6 +13,12 @@ mohand-plugin-otp
    intro/overview
 
 
+.. toctree::
+   :caption: 模块文档
+
+   module/hand
+
+
 索引表
 ======
 
