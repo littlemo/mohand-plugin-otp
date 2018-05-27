@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to mohand-plugin-otp's documentation!
-=============================================
+mohand-plugin-otp
+=================
 
 .. toctree::
    :maxdepth: 2
@@ -12,8 +12,8 @@ Welcome to mohand-plugin-otp's documentation!
 
 
 
-Indices and tables
-==================
+索引表
+======
 
 * :ref:`genindex`
 * :ref:`modindex`
