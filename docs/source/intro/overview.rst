@@ -31,4 +31,7 @@
 
 
 .. _MoHand: http://mohand.rtfd.io/
-.. _pyotp: http://pyotp.readthedocs.io
+.. _pyotp: http://pyotp.readthedocs.io/
+.. _virtualenv: http://virtualenv.pypa.io/
+.. _virtualenvwrapper: https://virtualenvwrapper.readthedocs.io/
+.. _Issues: https://github.com/littlemo/mohand-plugin-otp/issues
