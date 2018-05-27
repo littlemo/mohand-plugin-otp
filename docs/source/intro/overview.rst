@@ -29,3 +29,6 @@
 
     如果您感兴趣的话，可以了解下 `virtualenvwrapper`_ ，用其来管理虚拟环境可谓丝般顺滑！
 
+
+.. _MoHand: http://mohand.rtfd.io/
+.. _pyotp: http://pyotp.readthedocs.io
