@@ -1,7 +1,6 @@
 # mohand-plugin-otp
 
-MoHand插件，用以提供定制化的一次性密码生成服务，
-并同时支持向指定 `URL` 进行 `POST` 请求的接口，便于登录二次认证 **WiFi**
+MoHand插件，用以提供定制化的一次性密码生成服务
 
 ## Badge
 
