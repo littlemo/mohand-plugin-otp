@@ -12,7 +12,7 @@ MarkupSafe==1.0
 packaging==17.1
 pbr==4.0.3
 prettytable==0.7.2
-Pygments==2.2.0
+Pygments==2.7.4
 pyotp==2.2.6
 pyparsing==2.2.0
 pytz==2018.4
